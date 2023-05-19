@@ -15,7 +15,7 @@ import {
 
 const initValues = { name: "", email: "", subject: "", message: "" };
 
-const initState = { values: initValues };
+const initState = { isLoading: false, values: initValues };
 
 export default function Home() {
   const [state, setState] = useState(initState);
@@ -32,6 +32,7 @@ export default function Home() {
       },
     }));
 
+  // this determines whether the particular form input has had text inputted yet
   const onBlur = ({ target }) =>
     setTouched((prev) => ({ ...prev, [target.name]: true }));
 
